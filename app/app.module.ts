@@ -1,8 +1,9 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { NgModule }      from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { FormsModule }   from '@angular/forms'
 
-import { App } from './app.component';
+import { AppComponent }  from './app.component'
+import { HeroDetailComponent } from './hero-detail.component'
 
 @NgModule({
   imports: [
@@ -10,8 +11,9 @@ import { App } from './app.component';
     FormsModule
   ],
   declarations: [
-    App
+    AppComponent,
+    HeroDetailComponent
   ],
-  bootstrap: [ App ]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
