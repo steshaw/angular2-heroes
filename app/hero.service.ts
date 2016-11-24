@@ -10,7 +10,16 @@ export class HeroService {
     )
   }
   getHeroes(): Promise<Hero[]> {
-    // return Promise.resolve(mockHeroes)
-    return this.delay(3000).then(() => mockHeroes)
+    const delayMillis = 1000
+    if (delayMillis === 0) {
+      return Promise.resolve(mockHeroes)
+    } else {
+      return this.delay(delayMillis).then(() => mockHeroes)
+    }
+  }
+  getHero(id: number): Promise<Hero> {
+    return this.getHeroes().then(heros =>
+      heros.find(hero => hero.id === id)
+    )
   }
 }
